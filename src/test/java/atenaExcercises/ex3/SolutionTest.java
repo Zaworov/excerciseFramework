@@ -22,4 +22,19 @@ public class SolutionTest {
         //then
         assertEquals(8, result);
     }
+
+    @Test
+    public void sampleInput2() throws Exception {
+        //given
+        final int[] testArray = new int[]{2, 8, 4, 3, 2};
+        final int X = 1;
+        final int Y = 1;
+        final int Z = 1;
+
+        //when
+        int result = solution.solution(testArray, X, Y, Z);
+
+        //then
+        assertEquals(-1, result);
+    }
 }

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 public class Solution {
     public int solution(int[] A, int X, int Y, int Z) {
+        int entryNumberOfCars = A.length;
         Dispenser dispenserX = new Dispenser(X);
         Dispenser dispenserY = new Dispenser(Y);
         Dispenser dispenserZ = new Dispenser(Z);
@@ -30,6 +31,7 @@ public class Solution {
                     dispenserZ.setUnavailable();
                 }
             }
+            if (carsQueue.size() == entryNumberOfCars) return -1;
         } while (dispenserX.fuelToDispose > 0
                 || dispenserY.fuelToDispose > 0
                 || dispenserZ.fuelToDispose > 0);
