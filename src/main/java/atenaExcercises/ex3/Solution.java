@@ -1,40 +1,32 @@
 package atenaExcercises.ex3;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class Solution {
     public int solution(int[] A, int X, int Y, int Z) {
         int entryNumberOfCars = A.length;
-        Dispenser dispenserX = new Dispenser(X);
-        Dispenser dispenserY = new Dispenser(Y);
-        Dispenser dispenserZ = new Dispenser(Z);
+        ArrayList<Dispenser> dispensers = new ArrayList<>(Arrays.asList(new Dispenser(X), new Dispenser(Y), new Dispenser(Z)));
         LinkedList<Integer> carsQueue = new LinkedList<>();
         carsQueue = getLinkedList(carsQueue, A);
         int timeCounter = -1;
         do {
-            dispenserX.isDisposing();
-            dispenserY.isDisposing();
-            dispenserZ.isDisposing();
-            timeCounter++;
+            for (Dispenser dispenser : dispensers) {
+                dispenser.isDisposing();
 
-            if (!carsQueue.isEmpty()) {
-                if (dispenserX.isAvailable && dispenserX.hasEnoughFuel(carsQueue.peek())) {
-                    dispenserX.setFuelToDispose(carsQueue.pop());
-                    dispenserX.setUnavailable();
+                if (!carsQueue.isEmpty()) {
+                    if (dispenser.isAvailable && dispenser.hasEnoughFuel(carsQueue.peek())) {
+                        dispenser.setFuelToDispose(carsQueue.pop());
+                        dispenser.setUnavailable();
+                    }
                 }
-                if (dispenserY.isAvailable && dispenserY.hasEnoughFuel(carsQueue.peek())) {
-                    dispenserY.setFuelToDispose(carsQueue.pop());
-                    dispenserY.setUnavailable();
-                }
-                if (dispenserZ.isAvailable && dispenserZ.hasEnoughFuel(carsQueue.peek())) {
-                    dispenserZ.setFuelToDispose(carsQueue.pop());
-                    dispenserZ.setUnavailable();
-                }
+                timeCounter++;
+                if (carsQueue.size() == entryNumberOfCars) return -1;
             }
-            if (carsQueue.size() == entryNumberOfCars) return -1;
-        } while (dispenserX.fuelToDispose > 0
-                || dispenserY.fuelToDispose > 0
-                || dispenserZ.fuelToDispose > 0);
+        } while (dispensers.get(0).fuelToDispose > 0
+                || dispensers.get(1).fuelToDispose > 0
+                || dispensers.get(2).fuelToDispose > 0);
         return timeCounter;
     }
 
