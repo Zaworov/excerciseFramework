@@ -1,0 +1,8 @@
+Given integer parameter insert '5' digit between any of digits in the input number, so the result number is possibly
+the biggest.
+
+E.x
+268 -> 5268 (5 + 268)
+670 -> 6750 (67 + 5 + 0)
+0 -> 50 (5 + 0)
+-999 -> -5999 (- + 5 + 999)
