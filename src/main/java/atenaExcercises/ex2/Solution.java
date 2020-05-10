@@ -2,11 +2,10 @@ package atenaExcercises.ex2;
 
 import com.sun.org.slf4j.internal.Logger;
 import com.sun.org.slf4j.internal.LoggerFactory;
-import java.sql.Time;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Optional;
+import sun.awt.SunHints;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 interface TimeProvider {
     long getMillis();
@@ -15,41 +14,73 @@ interface TimeProvider {
 class CachingDataStructure implements TimeProvider {
     static final Logger log = LoggerFactory.getLogger(CachingDataStructure.class);
     private int maxSize;
-    private static long lowestTimeToLeave = 0;
-    private HashMap<String, ValueObject> VALUES_MAP = new HashMap<>();
+    private long lowestTimeToLeave = 0;
+    private LinkedHashMap<String, ValueObject> VALUES_MAP = new LinkedHashMap<>();
 
     CachingDataStructure(int maxSize) {
         this.maxSize = maxSize;
     }
 
     public void put(String key, String value, long timeToLeaveInMilliseconds) {
+        setLowestTimeToLeave(timeToLeaveInMilliseconds);
+
+        //        cleanTheMap(); // TODO Retrieve this
+
+        ValueObject valueObject = new ValueObject(value, timeToLeaveInMilliseconds);
+        if (VALUES_MAP.size() == maxSize) {
+            System.out.println("REACHED MAX CAPACITY");
+            if (!VALUES_MAP.containsKey(key)) {
+                if (timeToLeaveInMilliseconds > lowestTimeToLeave) {
+                    System.out.println("REPLACING THE LOWEST (" + lowestTimeToLeave + ") with " + timeToLeaveInMilliseconds);
+                    replaceTheLowest(key, valueObject);
+                    return;
+                } else {
+                    System.out.println("CAN'T ADD - CAPACITY IS FULL");
+                    return;
+                }
+            } else if (VALUES_MAP.containsKey(key)) {
+                System.out.println("REPLACE");
+                long newTimeToLeave = valueObject.getTimeToLeaveInMilliseconds();
+                if (newTimeToLeave > VALUES_MAP.get(key).getTimeToLeaveInMilliseconds()) {
+                    VALUES_MAP.put(key, valueObject);
+                }
+            }
+        }
+        VALUES_MAP.put(key, valueObject);
+    }
+
+    private void setLowestTimeToLeave(long timeToLeaveInMilliseconds) {
         if (lowestTimeToLeave == 0) {
             lowestTimeToLeave = timeToLeaveInMilliseconds;
         } else if (timeToLeaveInMilliseconds < lowestTimeToLeave) {
-            return;
+            System.out.println("NOT ADDING, TIME IS " + timeToLeaveInMilliseconds + " LOWER THEN THE LOWEST: " + lowestTimeToLeave);
         }
+    }
 
-//        cleanTheMap(); // TODO Retrieve this
-        ValueObject valueObject = new ValueObject(value, timeToLeaveInMilliseconds);
-        if (VALUES_MAP.size() == maxSize && !VALUES_MAP.containsKey(key)) {
-            System.out.println("CAN'T ADD ENTRY - VALUE MAP IS FULL");
-            //TODO Add log - "MAP IS FULL"
-            return;
-        } else if (VALUES_MAP.size() == maxSize && VALUES_MAP.containsKey(key)){
-            System.out.println("REPLACE");
-            long newTimeToLeave = valueObject.getTimeToLeaveInMilliseconds();
-            if (newTimeToLeave > VALUES_MAP.get(key).getTimeToLeaveInMilliseconds()){
-                VALUES_MAP.put(key, valueObject);
+    private void replaceTheLowest(String key, ValueObject valueObject) {
+        String lowestKey = (String) findTheLowest().getKey();
+        VALUES_MAP.remove(lowestKey);
+        put(key, valueObject.getValue(), valueObject.getTimeToLeaveInMilliseconds());
+        ValueObject lowestValueObject = (ValueObject) findTheLowest().getValue();
+        lowestTimeToLeave = lowestValueObject.getTimeToLeaveInMilliseconds();
+    }
+
+    private Entry findTheLowest() {
+        Iterator<Entry<String, ValueObject>> iterator = VALUES_MAP.entrySet().iterator();
+        long lowestTime = 0;
+        Entry resultEntry = null;
+        while (iterator.hasNext()) {
+            Entry entry = iterator.next();
+            if (resultEntry == null) resultEntry = entry;
+            ValueObject currentValueObject = (ValueObject) entry.getValue();
+            long currentTimeToLeave = currentValueObject.getTimeToLeaveInMilliseconds();
+            if (lowestTime == 0) lowestTime = currentTimeToLeave;
+            if (currentTimeToLeave < lowestTime) {
+                lowestTime = currentTimeToLeave;
+                resultEntry = entry;
             }
         }
-
-//        long lowestTimeToLeave = getLowestTimeToLeave();
-//        if (timeToLeaveInMilliseconds < lowestTimeToLeave) {
-//            //TODO Add log - "NOT ADDING AS HAS LOWER TIME TO LEAVE THEN LOWEST IN COLLECTION
-//            return;
-//        }
-
-        VALUES_MAP.put(key, valueObject);
+        return resultEntry;
     }
 
     private void isLowestTimeToLeave(long timeToLeaveInMilliseconds, HashMap<String, ValueObject> values_map) {
@@ -57,9 +88,9 @@ class CachingDataStructure implements TimeProvider {
 
     private void cleanTheMap() {
         System.out.println("CLEANING");
-        for (String key : VALUES_MAP.keySet()){
+        for (String key : VALUES_MAP.keySet()) {
             ValueObject valueObject = VALUES_MAP.get(key);
-            if (getMillis() >= valueObject.getTimeToLeaveInMilliseconds()){
+            if (getMillis() >= valueObject.getTimeToLeaveInMilliseconds()) {
                 VALUES_MAP.remove(key);
             }
         }
@@ -70,12 +101,6 @@ class CachingDataStructure implements TimeProvider {
 //        Arrays.sort(array);
 //        return (long) array[0];
 //    }
-
-    public Optional<String> get(String key) {
-        cleanTheMap();
-        Optional<String> optional = Optional.ofNullable(key);
-        return optional;
-    }
 
     public int getValuesMapSize() {
 //        cleanTheMap(); //TODO Retrieve later
@@ -95,16 +120,16 @@ class CachingDataStructure implements TimeProvider {
         String value;
         long timeToLeaveInMilliseconds;
 
-        public ValueObject(String value, long timeToLeaveInMilliseconds){
+        public ValueObject(String value, long timeToLeaveInMilliseconds) {
             this.value = value;
             this.timeToLeaveInMilliseconds = timeToLeaveInMilliseconds;
         }
 
-        String getValue (){
+        String getValue() {
             return value;
         }
 
-        long getTimeToLeaveInMilliseconds (){
+        long getTimeToLeaveInMilliseconds() {
             return timeToLeaveInMilliseconds;
         }
     }
