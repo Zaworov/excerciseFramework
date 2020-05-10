@@ -2,9 +2,18 @@ package atenaExcercises.ex2;
 
 import org.junit.Test;
 
+import java.time.Clock;
+import java.time.Instant;
+import java.time.ZoneOffset;
+import java.util.TimeZone;
+
 import static org.junit.Assert.assertEquals;
 
 public class SolutionTest {
+    {
+        Instant.now(Clock.fixed(Instant.ofEpochMilli(10), ZoneOffset.UTC));
+    }
+
     private CachingDataStructure cachingDataStructure;
 
     @Test
@@ -23,7 +32,7 @@ public class SolutionTest {
     @Test
     public void putAboveSizeLimit() {
         //given
-        cachingDataStructure  = new CachingDataStructure(1);
+        cachingDataStructure = new CachingDataStructure(1);
 
         //when
         cachingDataStructure.put("key", "value", 5);
@@ -37,7 +46,7 @@ public class SolutionTest {
     @Test
     public void sameValueReplacementTest() {
         //given
-        cachingDataStructure  = new CachingDataStructure(2);
+        cachingDataStructure = new CachingDataStructure(2);
 
         //when
         cachingDataStructure.put("key", "value", 5);
@@ -52,7 +61,7 @@ public class SolutionTest {
     @Test
     public void addingLowestTimeToLeaveTest() {
         //given
-        cachingDataStructure  = new CachingDataStructure(5);
+        cachingDataStructure = new CachingDataStructure(5);
 
         //when
         cachingDataStructure.put("key", "value", 5);
@@ -67,7 +76,7 @@ public class SolutionTest {
     @Test
     public void replacingAtFullCapacity() {
         //given
-        cachingDataStructure  = new CachingDataStructure(1);
+        cachingDataStructure = new CachingDataStructure(1);
 
         //when
         cachingDataStructure.put("key", "value", 5);
@@ -83,7 +92,7 @@ public class SolutionTest {
     @Test
     public void replacingAtFullCapacity2() {
         //given
-        cachingDataStructure  = new CachingDataStructure(3);
+        cachingDataStructure = new CachingDataStructure(3);
 
         //when
         cachingDataStructure.put("key1", "value1", 1);
@@ -100,7 +109,7 @@ public class SolutionTest {
     @Test
     public void replacingAtFullCapacity3() {
         //given
-        cachingDataStructure  = new CachingDataStructure(3);
+        cachingDataStructure = new CachingDataStructure(3);
 
         //when
         cachingDataStructure.put("key1", "value1", 1);
@@ -114,4 +123,25 @@ public class SolutionTest {
         assertEquals(3, lowestTimeToLeave);
     }
 
+    @Test
+    public void wrongInputTest() {
+        //given
+        cachingDataStructure = new CachingDataStructure(3);
+
+        //when
+        try {
+            cachingDataStructure.put(null, "value1", 1);
+        } catch (IllegalArgumentException notAdding) {
+        }
+        cachingDataStructure.put("key2", "value2", 2);
+        int collectionSize = cachingDataStructure.getValuesMapSize();
+
+        //then
+        assertEquals(1, collectionSize);
+    }
+
+    @Test
+    public void cleanTheMapTest() {
+// TODO It requires finding convenient way to mock and fix date
+    }
 }

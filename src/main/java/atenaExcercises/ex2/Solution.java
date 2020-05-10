@@ -1,8 +1,6 @@
 package atenaExcercises.ex2;
-
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
-import sun.awt.SunHints;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -12,7 +10,7 @@ interface TimeProvider {
 }
 
 class CachingDataStructure implements TimeProvider {
-    static final Logger log = LoggerFactory.getLogger(CachingDataStructure.class);
+    static Logger logger = LoggerFactory.getLogger(CachingDataStructure.class);
     private int maxSize;
     private long lowestTimeToLeave = 0;
     private LinkedHashMap<String, ValueObject> VALUES_MAP = new LinkedHashMap<>();
@@ -22,24 +20,25 @@ class CachingDataStructure implements TimeProvider {
     }
 
     public void put(String key, String value, long timeToLeaveInMilliseconds) {
+        verifyInput(key, value);
+//        long currentTime = getMillis(); //TODO add it when cleanTheMap works fine and is tested
+//        if (timeToLeaveInMilliseconds <= currentTime) {
+//            System.out.println("NOT ADDING - time to leave equal or lower then current time");
+//            cleanTheMap(currentTime);
+//            return;
+//        }
         setLowestTimeToLeave(timeToLeaveInMilliseconds);
-
-        //        cleanTheMap(); // TODO Retrieve this
 
         ValueObject valueObject = new ValueObject(value, timeToLeaveInMilliseconds);
         if (VALUES_MAP.size() == maxSize) {
-            System.out.println("REACHED MAX CAPACITY");
             if (!VALUES_MAP.containsKey(key)) {
                 if (timeToLeaveInMilliseconds > lowestTimeToLeave) {
-                    System.out.println("REPLACING THE LOWEST (" + lowestTimeToLeave + ") with " + timeToLeaveInMilliseconds);
                     replaceTheLowest(key, valueObject);
                     return;
                 } else {
-                    System.out.println("CAN'T ADD - CAPACITY IS FULL");
                     return;
                 }
             } else if (VALUES_MAP.containsKey(key)) {
-                System.out.println("REPLACE");
                 long newTimeToLeave = valueObject.getTimeToLeaveInMilliseconds();
                 if (newTimeToLeave > VALUES_MAP.get(key).getTimeToLeaveInMilliseconds()) {
                     VALUES_MAP.put(key, valueObject);
@@ -47,13 +46,20 @@ class CachingDataStructure implements TimeProvider {
             }
         }
         VALUES_MAP.put(key, valueObject);
+//        cleanTheMap(currentTime);
+    }
+
+    private void verifyInput(String key, String value) {
+        if (key == null || value == null){
+            throw new IllegalArgumentException("Either key or value is null");
+        }
     }
 
     private void setLowestTimeToLeave(long timeToLeaveInMilliseconds) {
         if (lowestTimeToLeave == 0) {
             lowestTimeToLeave = timeToLeaveInMilliseconds;
         } else if (timeToLeaveInMilliseconds < lowestTimeToLeave) {
-            System.out.println("NOT ADDING, TIME IS " + timeToLeaveInMilliseconds + " LOWER THEN THE LOWEST: " + lowestTimeToLeave);
+            logger.info("NOT ADDING, TIME IS {} LOWER THEN THE LOWEST {}", timeToLeaveInMilliseconds, lowestTimeToLeave);
         }
     }
 
@@ -83,37 +89,27 @@ class CachingDataStructure implements TimeProvider {
         return resultEntry;
     }
 
-    private void isLowestTimeToLeave(long timeToLeaveInMilliseconds, HashMap<String, ValueObject> values_map) {
+    public long getLowestTimeToLeave() {
+        return lowestTimeToLeave;
     }
 
-    private void cleanTheMap() {
-        System.out.println("CLEANING");
+    private void cleanTheMap(long currentTime) {
         for (String key : VALUES_MAP.keySet()) {
             ValueObject valueObject = VALUES_MAP.get(key);
-            if (getMillis() >= valueObject.getTimeToLeaveInMilliseconds()) {
+            if (valueObject.getTimeToLeaveInMilliseconds() <= currentTime ) {
                 VALUES_MAP.remove(key);
             }
         }
     }
 
-//    private long getLowestTimeToLeave() {
-//        Object[] array = new Collection[]{VALUES_MAP.values()};
-//        Arrays.sort(array);
-//        return (long) array[0];
-//    }
-
     public int getValuesMapSize() {
-//        cleanTheMap(); //TODO Retrieve later
+//        cleanTheMap();
         return VALUES_MAP.size();
     }
 
     @Override
     public long getMillis() {
         return System.currentTimeMillis();
-    }
-
-    public long getLowestTimeToLeave() {
-        return lowestTimeToLeave;
     }
 
     private class ValueObject {
