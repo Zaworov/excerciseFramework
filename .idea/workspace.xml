@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32c9f815-a8f3-436c-b1fd-76d2406a1565" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_30.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/excercisesFramework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/excercisesFramework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/atenaExcercises/ex2/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/atenaExcercises/ex2/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/atenaExcercises/ex2/SolutionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/atenaExcercises/ex2/SolutionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure$ValueObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure$ValueObject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/atenaExcercises/ex2/SolutionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/atenaExcercises/ex2/SolutionTest.class" afterDir="false" />
@@ -77,7 +72,7 @@
       <recent name="C:\Users\u6025874\Desktop\excercisesFramework\src\main\java\codilityExcercises\ex8" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SolutionTest.putTest">
+  <component name="RunManager" selected="JUnit.SolutionTest">
     <configuration name="SolutionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excercisesFramework" />
       <extension name="coverage">
@@ -159,9 +154,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SolutionTest" />
         <item itemvalue="JUnit.SolutionTest.putTest" />
         <item itemvalue="JUnit.SolutionTest.wrongInputTest" />
-        <item itemvalue="JUnit.SolutionTest" />
         <item itemvalue="JUnit.SolutionTest.replacingAtFullCapacity2" />
         <item itemvalue="JUnit.SolutionTest.replacingAtFullCapacity3" />
       </list>
@@ -239,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589109463652</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging">
+      <created>1589146173738</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1589146173738</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -251,7 +253,8 @@
     <MESSAGE value="Added test for the lowestTimeToLeave" />
     <MESSAGE value="Tidying project" />
     <MESSAGE value="Implemented replacing at full capacity of collection&#10;Also, fixed testing class, it couldn't run for all methods at once because of the static variable in Solution class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented replacing at full capacity of collection&#10;Also, fixed testing class, it couldn't run for all methods at once because of the static variable in Solution class" />
+    <MESSAGE value="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Project_Structure" timestamp="1588889561812">
@@ -274,11 +277,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="590" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1582234263015" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589109461602">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589146171891">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="172" y="13" key="CommitChangelistDialog2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586209186788" />
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589109461602" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589146171891" />
     <state x="0" y="71" key="DiffContextDialog" timestamp="1586208810676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -340,21 +343,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1585776857924" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589109387298">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589238724264">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586209051866" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589109387298" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589238724264" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589146217474" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589146058614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1589146058614" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589143405436">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589202846175">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500932579" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588893542958" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589143405436" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589202846175" />
     <state x="499" y="167" key="extract.method.dialog" timestamp="1589107757147">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
