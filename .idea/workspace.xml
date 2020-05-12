@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32c9f815-a8f3-436c-b1fd-76d2406a1565" name="Default Changelist" comment="">
+    <list default="true" id="32c9f815-a8f3-436c-b1fd-76d2406a1565" name="Default Changelist" comment="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure$ValueObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure$ValueObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/atenaExcercises/ex2/CachingDataStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/atenaExcercises/ex2/SolutionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/atenaExcercises/ex2/SolutionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/findarray/MyFindArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/findarray/MyFindArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/findarray/MyFindArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/findarray/MyFindArray.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   </component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
-      <run-configuration type="JUnit" name="SolutionTest.replacingAtFullCapacity" />
+      <run-configuration type="JUnit" name="MyFindArrayTest" />
     </enabled-run-configurations>
   </component>
   <component name="MavenImportPreferences">
@@ -72,7 +71,38 @@
       <recent name="C:\Users\u6025874\Desktop\excercisesFramework\src\main\java\codilityExcercises\ex8" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SolutionTest">
+  <component name="RunManager" selected="JUnit.MyFindArrayTest">
+    <configuration name="MyFindArrayTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="excercisesFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="findarray.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="findarray" />
+      <option name="MAIN_CLASS_NAME" value="findarray.MyFindArrayTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFindArrayTest.sampleInput3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="excercisesFramework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="findarray.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="findarray" />
+      <option name="MAIN_CLASS_NAME" value="findarray.MyFindArrayTest" />
+      <option name="METHOD_NAME" value="sampleInput3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SolutionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excercisesFramework" />
       <extension name="coverage">
@@ -104,38 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SolutionTest.replacingAtFullCapacity2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="excercisesFramework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="atenaExcercises.ex2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="atenaExcercises.ex2" />
-      <option name="MAIN_CLASS_NAME" value="atenaExcercises.ex2.SolutionTest" />
-      <option name="METHOD_NAME" value="replacingAtFullCapacity2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SolutionTest.replacingAtFullCapacity3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="excercisesFramework" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="atenaExcercises.ex2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="atenaExcercises.ex2" />
-      <option name="MAIN_CLASS_NAME" value="atenaExcercises.ex2.SolutionTest" />
-      <option name="METHOD_NAME" value="replacingAtFullCapacity3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SolutionTest.wrongInputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="excercisesFramework" />
       <extension name="coverage">
@@ -154,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyFindArrayTest" />
+        <item itemvalue="JUnit.MyFindArrayTest.sampleInput3" />
         <item itemvalue="JUnit.SolutionTest" />
         <item itemvalue="JUnit.SolutionTest.putTest" />
         <item itemvalue="JUnit.SolutionTest.wrongInputTest" />
-        <item itemvalue="JUnit.SolutionTest.replacingAtFullCapacity2" />
-        <item itemvalue="JUnit.SolutionTest.replacingAtFullCapacity3" />
       </list>
     </recent_temporary>
   </component>
@@ -241,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589146173738</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging">
+      <created>1589239111686</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1589239111686</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -277,11 +282,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="590" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1582234263015" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589146171891">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589318514586">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="172" y="13" key="CommitChangelistDialog2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586209186788" />
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589146171891" />
+    <state x="172" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239110122" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589318514586" />
     <state x="0" y="71" key="DiffContextDialog" timestamp="1586208810676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -299,30 +304,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582492096863" />
-    <state width="1493" height="307" key="GridCell.Tab.0.bottom" timestamp="1589142966237">
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom" timestamp="1589286073338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="153" key="GridCell.Tab.0.bottom/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500870747" />
-    <state width="1493" height="263" key="GridCell.Tab.0.bottom/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588894152881" />
-    <state width="1493" height="307" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589142966237" />
-    <state width="1493" height="307" key="GridCell.Tab.0.center" timestamp="1589142966233">
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239657642" />
+    <state width="1493" height="212" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589286073338" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center" timestamp="1589286073338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="153" key="GridCell.Tab.0.center/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500870746" />
-    <state width="1493" height="263" key="GridCell.Tab.0.center/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588894152880" />
-    <state width="1493" height="307" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589142966233" />
-    <state width="1493" height="307" key="GridCell.Tab.0.left" timestamp="1589142966232">
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239657641" />
+    <state width="1493" height="212" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589286073338" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left" timestamp="1589286073337">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="153" key="GridCell.Tab.0.left/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500870746" />
-    <state width="1493" height="263" key="GridCell.Tab.0.left/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588894152880" />
-    <state width="1493" height="307" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589142966232" />
-    <state width="1493" height="307" key="GridCell.Tab.0.right" timestamp="1589142966235">
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239657641" />
+    <state width="1493" height="212" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589286073337" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right" timestamp="1589286073338">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="153" key="GridCell.Tab.0.right/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500870747" />
-    <state width="1493" height="263" key="GridCell.Tab.0.right/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588894152881" />
-    <state width="1493" height="307" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589142966235" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239657642" />
+    <state width="1493" height="212" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589286073338" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588893507579">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -343,11 +348,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1585776857924" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589238724264">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589318409990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589238724264" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589146217474" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239115991" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589318409990" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589146058614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -358,16 +363,17 @@
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1186.-1050.1680.1010/494.-1080.1920.1040@0.0.1536.824" timestamp="1586500932579" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1588893542958" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589202846175" />
-    <state x="499" y="167" key="extract.method.dialog" timestamp="1589107757147">
+    <state x="499" y="167" key="extract.method.dialog" timestamp="1589239571559">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="624" y="211" key="extract.method.dialog/-3840.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1582562214411" />
+    <state x="499" y="167" key="extract.method.dialog/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239571559" />
     <state x="499" y="167" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1589107757147" />
-    <state x="463" y="149" width="611" height="526" key="find.popup" timestamp="1586209032843">
+    <state x="463" y="149" width="611" height="526" key="find.popup" timestamp="1589318521960">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="149" width="611" height="526" key="find.popup/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586209032843" />
-    <state x="463" y="149" width="609" height="526" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1582479619288" />
+    <state x="463" y="149" width="611" height="526" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1589318521960" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1582409493421">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

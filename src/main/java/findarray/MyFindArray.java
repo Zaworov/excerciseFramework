@@ -12,15 +12,15 @@ public class MyFindArray implements FindArray {
     @Override
     public int findArray(int[] array, int[] subArray) {
         boolean isSubarrayFound = false;
-        int firstFoundIndex = 0;
-        for (int index = 0; index < array.length; index++) {
+        int latestFoundIndex = 0;
+        for (int index = latestFoundIndex; index < array.length; index++) {
             System.out.println(array[index] + " + " + subArray[FIRST_VALUE]);
             if (array[index] == subArray[FIRST_VALUE]) {
                 if (subArray.length == 1) {
                     isSubarrayFound = true;
                     break;
                 }
-                for (int subIndex = 1; subIndex < subArray.length; subIndex++) {
+                for (int subIndex = latestFoundIndex + 1; subIndex < subArray.length; subIndex++) {
                     int tempIndex = index + 1;
                     System.out.println("INSIDE: " + array[tempIndex] + " + " + subArray[subIndex]);
                     if (array[tempIndex] == subArray[subIndex]) {
@@ -34,13 +34,13 @@ public class MyFindArray implements FindArray {
                     System.out.println("END OF LOOP");
                 }
                 if (isSubarrayFound) {
-                    firstFoundIndex = index;
+                    latestFoundIndex = index;
                     break;
                 }
             }
         }
-//		throw new UnsupportedOperationException("Please implement me!");
+//		throw new UnsupportedOperationException("Please implement me!"); //TODO What to do with it?
         if (!isSubarrayFound) return -1;
-		return firstFoundIndex;
+		return latestFoundIndex;
     }
 }
