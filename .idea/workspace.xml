@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="32c9f815-a8f3-436c-b1fd-76d2406a1565" name="Default Changelist" comment="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging">
+    <list default="true" id="32c9f815-a8f3-436c-b1fd-76d2406a1565" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/findarray/MyFindArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/findarray/MyFindArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/findarray/MyFindArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/findarray/MyFindArray.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +17,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="zavvorov@gmail.com" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JavaAutoRunManager">
@@ -246,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589239111686</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Added test for incorrect input to VALUES_MAP&#10;- Added proper dependency for logging">
+      <created>1589318577425</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1589318577425</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -282,19 +292,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="590" y="337" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1582234263015" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589318514586">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589318575871">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="172" y="0" key="CommitChangelistDialog2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239110122" />
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589318514586" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589318575871" />
     <state x="0" y="71" key="DiffContextDialog" timestamp="1586208810676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="71" key="DiffContextDialog/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586208810676" />
-    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1586209314468">
+    <state x="548" y="166" key="FileChooserDialogImpl" timestamp="1589318737929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1586209314468" />
+    <state x="548" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589318737929" />
     <state x="640" y="305" width="258" height="213" key="Github.ShareDialog" timestamp="1586209344091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -348,11 +359,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1585776857924" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589318409990">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589318582010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1680.-277.1680.1010@0.0.1536.824" timestamp="1589239115991" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589318409990" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589318582010" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589146058614">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
