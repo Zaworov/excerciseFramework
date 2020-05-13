@@ -97,4 +97,17 @@ public class MyFindArrayTest {
 		//then
 		assertEquals(5, result);
 	}
+
+	@Test
+	public void sampleInput5() throws Exception {
+		//given
+		final int[] array = {4,9,3,7,8,3,7,9};
+		final int[] subArray = {3,7,9};
+
+		//when
+		int result = findArray.findArray(array, subArray);
+
+		//then
+		assertEquals(5, result);
+	}
 }

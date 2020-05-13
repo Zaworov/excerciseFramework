@@ -13,30 +13,16 @@ public class MyFindArray implements FindArray {
     public int findArray(int[] array, int[] subArray) {
         boolean isSubarrayFound = false;
         int latestFoundIndex = 0;
-        for (int index = latestFoundIndex; index < array.length; index++) {
-            System.out.println(array[index] + " + " + subArray[FIRST_VALUE]);
+        for (int index = 0; index < array.length; index++) {
             if (array[index] == subArray[FIRST_VALUE]) {
-                System.out.println("CHECKING");
-                isSubarrayFound = false;
                 if (subArray.length == 1) {
-                    System.out.println("ARRAY LENGTH == 1");
                     isSubarrayFound = true;
                     if (index > latestFoundIndex) latestFoundIndex = index;
                     continue;
                 }
-                for (int subIndex = FIRST_VALUE + 1; subIndex < subArray.length; subIndex++) {
-                    System.out.println("HERE");
-                    int tempIndex = index + 1;
-                    System.out.println("INSIDE: " + array[tempIndex] + " + " + subArray[subIndex]);
-                    if (array[tempIndex] == subArray[subIndex]) {
-                        System.out.println("HERE1");
-                        isSubarrayFound = true;
-                    } else {
-                        System.out.println("HERE2");
-                        isSubarrayFound = false;
-                        break;
-                    }
-                    System.out.println("END OF LOOP");
+                try {
+                    isSubarrayFound = isSubarrayFound(array, subArray, index);
+                } catch (IndexOutOfBoundsException notFound) {
                 }
                 if (isSubarrayFound) {
                     if (index > latestFoundIndex) latestFoundIndex = index;
@@ -45,6 +31,23 @@ public class MyFindArray implements FindArray {
         }
 //		throw new UnsupportedOperationException("Please implement me!"); //TODO What to do with it?
         if (!isSubarrayFound) return -1;
-		return latestFoundIndex;
+        return latestFoundIndex;
+    }
+
+    private boolean isSubarrayFound(int[] array, int[] subArray, int index) {
+        boolean isSubarrayFound = false;
+        int tempIndex = index + 1;
+        for (int subIndex = FIRST_VALUE + 1; subIndex < subArray.length; subIndex++) {
+            if (array[tempIndex] == subArray[subIndex]) {
+                if (subArray.length - 1 == subIndex) {
+                    isSubarrayFound = true;
+                }
+            } else {
+                isSubarrayFound = false;
+                break;
+            }
+            tempIndex++;
+        }
+        return isSubarrayFound;
     }
 }
