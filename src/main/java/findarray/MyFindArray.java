@@ -16,11 +16,16 @@ public class MyFindArray implements FindArray {
         for (int index = latestFoundIndex; index < array.length; index++) {
             System.out.println(array[index] + " + " + subArray[FIRST_VALUE]);
             if (array[index] == subArray[FIRST_VALUE]) {
+                System.out.println("CHECKING");
+                isSubarrayFound = false;
                 if (subArray.length == 1) {
+                    System.out.println("ARRAY LENGTH == 1");
                     isSubarrayFound = true;
-                    break;
+                    if (index > latestFoundIndex) latestFoundIndex = index;
+                    continue;
                 }
-                for (int subIndex = latestFoundIndex + 1; subIndex < subArray.length; subIndex++) {
+                for (int subIndex = FIRST_VALUE + 1; subIndex < subArray.length; subIndex++) {
+                    System.out.println("HERE");
                     int tempIndex = index + 1;
                     System.out.println("INSIDE: " + array[tempIndex] + " + " + subArray[subIndex]);
                     if (array[tempIndex] == subArray[subIndex]) {
@@ -34,8 +39,7 @@ public class MyFindArray implements FindArray {
                     System.out.println("END OF LOOP");
                 }
                 if (isSubarrayFound) {
-                    latestFoundIndex = index;
-                    break;
+                    if (index > latestFoundIndex) latestFoundIndex = index;
                 }
             }
         }

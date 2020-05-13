@@ -84,6 +84,17 @@ public class MyFindArrayTest {
 		//then
 		assertEquals(5, result);
 	}
-//
-//	For extra points: implement it in an efficient way for large input arrays.
+
+	@Test
+	public void sampleInput4() throws Exception {
+		//given
+		final int[] array = {4,9,3,7,8,3,7,1};
+		final int[] subArray = {3};
+
+		//when
+		int result = findArray.findArray(array, subArray);
+
+		//then
+		assertEquals(5, result);
+	}
 }
