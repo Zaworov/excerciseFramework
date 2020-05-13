@@ -11,6 +11,9 @@ public class MyFindArray implements FindArray {
 
     @Override
     public int findArray(int[] array, int[] subArray) {
+        if (subArray.length > 10) {
+            throw new UnsupportedOperationException(subArray.length);
+        }
         boolean isSubarrayFound = false;
         int latestFoundIndex = 0;
         for (int index = 0; index < array.length; index++) {
@@ -49,5 +52,13 @@ public class MyFindArray implements FindArray {
             tempIndex++;
         }
         return isSubarrayFound;
+    }
+
+    static class UnsupportedOperationException extends RuntimeException {
+        int length;
+
+        public UnsupportedOperationException(int length) {
+            this.length = length;
+        }
     }
 }

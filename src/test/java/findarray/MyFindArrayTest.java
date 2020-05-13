@@ -110,4 +110,22 @@ public class MyFindArrayTest {
 		//then
 		assertEquals(5, result);
 	}
+
+	@Test
+	public void unhandledOperationTest() throws Exception {
+		//given
+		final int[] array = {4,9,3,7,8,3,7,9};
+		final int[] subArray = {3,7,9,1,1,1,1,1,1,1,1};
+
+		//when
+		int result;
+		try {
+			result = findArray.findArray(array, subArray);
+		} catch (MyFindArray.UnsupportedOperationException exception) {
+			result = -1;
+		}
+
+		//then
+		assertEquals(-1, result);
+	}
 }
