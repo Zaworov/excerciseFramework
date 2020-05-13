@@ -32,7 +32,6 @@ public class MyFindArray implements FindArray {
                 }
             }
         }
-//		throw new UnsupportedOperationException("Please implement me!"); //TODO What to do with it?
         if (!isSubarrayFound) return -1;
         return latestFoundIndex;
     }
